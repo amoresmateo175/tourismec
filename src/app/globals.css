@@ -19,10 +19,16 @@ body {
   font-family: system-ui, -apple-system, sans-serif;
 }
 
-/* ===== TYPOGRAPHY ===== */
+/* ⚠️ IMPORTANTE: NO forzar color global en headings */
+/* Esto estaba causando que el navbar no se vea */
 h1, h2, h3, h4 {
-  color: var(--color-primary);
   font-weight: 700;
+}
+
+/* ===== LINKS ===== */
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* ===== ANIMATIONS ===== */
@@ -58,11 +64,11 @@ h1, h2, h3, h4 {
   @apply max-w-6xl mx-auto px-6;
 }
 
-/* Buttons (reusable styles) */
+/* ===== BUTTONS (FIXED) ===== */
 .btn-primary {
   background-color: var(--color-primary);
-  color: white;
-  @apply px-6 py-3 rounded-lg font-semibold transition;
+  color: #ffffff;
+  @apply px-6 py-3 rounded-lg font-semibold inline-block transition;
 }
 
 .btn-primary:hover {
@@ -72,8 +78,8 @@ h1, h2, h3, h4 {
 
 .btn-accent {
   background-color: var(--color-accent);
-  color: black;
-  @apply px-6 py-3 rounded-lg font-semibold transition;
+  color: #000000;
+  @apply px-6 py-3 rounded-lg font-semibold inline-block transition;
 }
 
 .btn-accent:hover {
@@ -81,7 +87,19 @@ h1, h2, h3, h4 {
   transform: scale(1.05);
 }
 
-/* Card style */
+/* 🔴 FIX CLAVE: botón rojo visible */
+.btn-danger {
+  background-color: #E53935;
+  color: #ffffff;
+  @apply px-5 py-2 rounded-md font-semibold inline-block transition;
+}
+
+.btn-danger:hover {
+  background-color: #c62828;
+  transform: scale(1.05);
+}
+
+/* ===== CARDS ===== */
 .card {
   @apply bg-white rounded-xl shadow-md transition;
 }

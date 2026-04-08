@@ -23,9 +23,9 @@ export default function Packages() {
               <p className="mb-4">
                 Discover the beauty of Ecuador with this unique experience.
               </p>
-              <button className="bg-[var(--color-danger)] text-white px-4 py-2 rounded hover:scale-105 transition">
-                Book Now
-              </button>
+              <button className="btn-danger">
+  Book Now
+</button>
             </div>
           ))}
         </div>
