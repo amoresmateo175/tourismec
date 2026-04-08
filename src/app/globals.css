@@ -1,32 +1,41 @@
 @import "tailwindcss";
 
+/* ===== COLOR SYSTEM ===== */
 :root {
-  --color-primary: #1B5E20;
-  --color-secondary: #1565C0;
-  --color-accent: #FFD54F;
-  --color-danger: #E53935;
-  --color-bg: #FAF3E0;
+  --color-primary: #0B1F3A;   /* Dark Blue */
+  --color-accent: #D4AF37;    /* Gold */
+  --color-bg: #F8F9FA;        /* Off White */
+  --color-secondary: #2E7D32; /* Soft Green */
 }
 
-/* Smooth scroll */
+/* ===== BASE ===== */
 html {
   scroll-behavior: smooth;
 }
 
-/* Base styles */
 body {
   background-color: var(--color-bg);
-  color: #222;
-  font-family: system-ui, sans-serif;
+  color: #1a1a1a;
+  font-family: system-ui, -apple-system, sans-serif;
 }
 
-/* Animations */
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4 {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* ===== ANIMATIONS ===== */
 .fade-in {
   animation: fadeIn 0.8s ease-in-out forwards;
 }
 
 .slide-up {
-  animation: slideUp 0.8s ease forwards;
+  animation: slideUp 0.7s ease forwards;
+}
+
+.scale-in {
+  animation: scaleIn 0.4s ease forwards;
 }
 
 @keyframes fadeIn {
@@ -35,11 +44,49 @@ body {
 }
 
 @keyframes slideUp {
-  from { transform: translateY(40px); opacity: 0; }
+  from { transform: translateY(30px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
 
-/* Utility classes */
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ===== UTILITIES ===== */
 .container {
   @apply max-w-6xl mx-auto px-6;
+}
+
+/* Buttons (reusable styles) */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  @apply px-6 py-3 rounded-lg font-semibold transition;
+}
+
+.btn-primary:hover {
+  background-color: #06152a;
+  transform: scale(1.05);
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: black;
+  @apply px-6 py-3 rounded-lg font-semibold transition;
+}
+
+.btn-accent:hover {
+  background-color: #b8962e;
+  transform: scale(1.05);
+}
+
+/* Card style */
+.card {
+  @apply bg-white rounded-xl shadow-md transition;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
